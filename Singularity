@@ -3,7 +3,7 @@
 ################################################################################
 
 BootStrap: docker
-From: trinityrnaseq/trinityrnaseq
+From: jasongallant/singular_shockly
 
 ################################################################################
 # Copy any necessary files into the container
@@ -20,16 +20,6 @@ From: trinityrnaseq/trinityrnaseq
 ################################################################################
 # Install additional packages
 ################################################################################
-apt-get update
-apt-get install -y build-essential
-apt-get install -y --no-install-recommends libnss-sss
-
-star_version=2.5.2b
-
-# install star aligner
-wget https://github.com/alexdobin/STAR/archive/${star_version}.tar.gz /usr/bin/
-tar -xzf /usr/bin/${star_version}.tar.gz -C /usr/bin/
-cp /usr/bin/STAR-${star_version}/bin/Linux_x86_64/* /usr/local/bin
 
 ################################################################################
 # Create directories to enable access to common HPCC mount points
